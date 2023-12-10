@@ -13,7 +13,7 @@ HTML, CSS, VanillaJS, PHP, Bootstrap, jQuery
 6. Login with your creds
 
 ### App Link
-https://attendanceqr.tmalikjk14.online/
+[https://attendanceqr.tmalikjk14.online/](https://attendancestudentqr.000webhostapp.com/)
 
 ### Credentials
 1. Admin: admin, Admin666@
