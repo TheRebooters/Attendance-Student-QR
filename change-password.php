@@ -1,14 +1,14 @@
 <?php
     session_start();
     date_default_timezone_set("Asia/Kolkata");
-    require 'connection.php';
+    require '../connection.php';
     if (isset($_SESSION['username'])&&isset($_SESSION['password'])) {
       extract($_SESSION);
-      $sql = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password' AND `access` != 'admin' AND `access` != 'restricted'";
+      $sql = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password' AND `access` = 'admin'";
       $result = $conn->query($sql);
       if ($result->num_rows == 0) {
         session_destroy();
-        header('Location: index.php');
+        header('Location: ../index.php');
         die();
       }
       else {
@@ -17,7 +17,7 @@
     }
     else {
       session_destroy();
-      header('Location: index.php');
+      header('Location: ../index.php');
       die();
     }
 ?>
@@ -35,12 +35,12 @@
   <title>Change Password | Attendify</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="../css/sb-admin.css" rel="stylesheet">
 
-  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
 
 </head>
 
@@ -174,10 +174,10 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
 
